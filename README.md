@@ -37,6 +37,8 @@ Uma ferramenta web leve e minimalista desenvolvida em Go para varrimento, monito
 - [ ] Latência por ip
 - [ ] Pesquisa por ipv6 inclusa
 
+---
+
 ## Fluxo de Utilização
 
 1. **Executar e abrir o navegador**
