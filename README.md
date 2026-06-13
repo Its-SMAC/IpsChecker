@@ -138,10 +138,10 @@ Transferir o [Source Code(.zip)](https://github.com/Its-SMAC/IpsChecker/archive/
 
 O projeto utiliza a framework Gin para expor as seguintes rotas:
 
-- **`GET` `/`**
+- `http GET / `
   Retorna a interface web principal.
 
-- **`POST` `/scan/ip`**
+- `http POST /scan/ip `
   Inicia o processo de varrimento da gama de IPs fornecida pelo frontend.
 
 #### Exemplo de Log do Servidor (Gin)
