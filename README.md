@@ -1,8 +1,7 @@
 # IP Checker
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-
+![GitHub repo size](https://img.shields.io/github/repo-size/Its-SMAC/IpsChecker?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/Its-SMAC/IpsChecker?style=for-the-badge)
 Uma ferramenta web leve e minimalista desenvolvida em Go para varrimento, monitorização e verificação de disponibilidade de endereços IP em redes locais.
 
 ## Funcionalidades
@@ -16,9 +15,9 @@ Uma ferramenta web leve e minimalista desenvolvida em Go para varrimento, monito
 
 ## Futuras funcionalidades
 
-- [] Executável unico
-- [] Latência por ip
-- [] Pesquisa por ipv6 inclusa
+- [ ] Executável único
+- [ ] Latência por ip
+- [ ] Pesquisa por ipv6 inclusa
 
 ## Fluxo de Utilização
 
@@ -94,15 +93,21 @@ Transferir o [Source Code(.zip)](https://github.com/Its-SMAC/IpsChecker/archive/
 └── index.tmpl
 ```
 
-## API
+## API Endpoints
 
-### Routes
+O projeto utiliza a framework Gin para expor as seguintes rotas:
 
-- {GET} /
-- {POST} /scan/ip
-  ```bash
-  [GIN] 2026/06/13 - 12:49:55 | 200 |    1.07s |       127.0.0.1 | POST     "/scan/ip"
-  ```
+- **`GET` `/`**
+  Retorna a interface web principal.
+
+- **`POST` `/scan/ip`**
+  Inicia o processo de varrimento da gama de IPs fornecida pelo frontend.
+
+#### Exemplo de Log do Servidor (Gin)
+
+```text
+[GIN] 2026/06/13 - 12:49:55 | 200 |    1.07s |       127.0.0.1 | POST     "/scan/ip"
+```
 
 ## Stack
 
@@ -112,15 +117,11 @@ Transferir o [Source Code(.zip)](https://github.com/Its-SMAC/IpsChecker/archive/
 | ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) | Frontend | Estilização sóbria da interface   |
 | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)       | Frontend | Pedidos assíncronos e filtragem   |
 
-## Licence
+## License
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE) para mais detalhes.
 
 > [!WARNING]
 > **Disclaimer:** O IP Checker é um projeto pessoal em constante desenvolvimento. Podem ocorrer instabilidades ou falsos negativos dependendo das permissões de rede do sistema operativo utilizado. Sinta-se livre para modificar, alterar ou estudar o código.
 >
 > _Nota: A interface web visual foi inteiramente produzida com o auxílio da [IA Gemini](https://gemini.google.com)._
-
-```
-
-```
