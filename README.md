@@ -1,2 +1,62 @@
-# IpsChecker
-A simple web API to check which IP addresses are free
+# IP Checker
+
+Uma ferramenta web leve e minimalista desenvolvida em Go para varrimento, monitorização e verificação de disponibilidade de endereços IP em redes locais.
+
+## Funcionalidades
+
+- Varrimento automático a partir de um IP base/gama de rede.
+- Interface web sóbria e responsiva (Tailwind CSS).
+- Filtragem e pesquisa de resultados em tempo real (por IP ou estado).
+- Atualização assíncrona sem recarregamento de página.
+
+---
+
+## Opção 1: Executar via Binário (.exe) - Recomendado para Utilizadores
+
+Esta opção não requer que tenha o Go instalado no teu sistema.
+
+1. Aceder à secção de **Releases** do repositório.
+2. Descarregar o ficheiro `ip-checker.exe` mais recente.
+3. Certificar que a pasta `templates/` e `static/` estão no mesmo diretório do executável (caso os assets não tenham sido embutidos).
+4. Dar duplo clique em `ip-checker.exe`.
+5. Abrir o navegador e aceder a: `http://localhost:8080`
+
+---
+
+## Opção 2: Executar Código Localmente - Recomendado para Desenvolvedores
+
+Esta opção requer que tenhas o **Go 1.21+** instalado na tua máquina.
+
+### 1. Clonar o Repositório
+
+```bash
+git clone https://github.com/Its-SMAC/IpsChecker.git
+```
+
+## Estrutura do projeto
+
+```text
+.
+├── cmd
+│ └── main.go
+├── go.mod
+├── go.sum
+├── internal
+│ └── checker.go
+├── LICENSE
+├── README.md
+└── web
+├── static
+│ └── js
+│ └── script.js
+└── templates
+└── index.tmpl
+```
+
+## Stack
+
+| Tecnologia                                                                                                              |   Tipo   | Função no Projeto                 |
+| :---------------------------------------------------------------------------------------------------------------------- | :------: | :-------------------------------- |
+| ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)                               | Backend  | Servidor API e varrimento de rede |
+| ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) | Frontend | Estilização sóbria da interface   |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)       | Frontend | Pedidos assíncronos e filtragem   |
