@@ -34,6 +34,7 @@ Uma ferramenta web leve e minimalista desenvolvida em Go para varrimento, monito
 ## Futuras funcionalidades
 
 - [ ] Executável único
+- [ ] Modo CMD
 - [ ] Latência por ip
 - [ ] Pesquisa por ipv6 inclusa
 
