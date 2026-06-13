@@ -20,6 +20,23 @@ Uma ferramenta web leve e minimalista desenvolvida em Go para varrimento, monito
 - [] Latência por ip
 - [] Pesquisa por ipv6 inclusa
 
+## Fluxo de Utilização
+
+1. **Executar e abrir o navegador**
+   Aceda a `http://localhost:8080` para ver o painel inicial.
+   <img src="images/interface_basica.png" alt="Interface pós-execução" width="700">
+
+2. **Pesquisar o IP atual**
+   Introduza o IP base para iniciar o varrimento da rede.
+   <img src="images/interface_pospesquisa.png" alt="Interface pós-pesquisa" width="700">
+
+3. **Filtragem de resultados**
+   Pode refinar os resultados obtidos de duas formas:
+   - **Por Estado:** Filtrar apenas os IPs com estado _Ativo_ ou _Inacessível_.
+     <img src="images/filtragem_estado.png" alt="Filtragem por estado" width="700">
+   - **Por IP:** Digitar parte do endereço para encontrar um dispositivo específico.
+     <img src="images/filtragem_ip.png" alt="Filtragem por IP" width="700">
+
 ## Opção 1: Executar via Binário (.exe) - Recomendado para Utilizadores
 
 > [!WARNING]
@@ -77,6 +94,16 @@ Transferir o [Source Code(.zip)](https://github.com/Its-SMAC/IpsChecker/archive/
 └── index.tmpl
 ```
 
+## API
+
+### Routes
+
+- {GET} /
+- {POST} /scan/ip
+  ```bash
+  [GIN] 2026/06/13 - 12:49:55 | 200 |    1.07s |       127.0.0.1 | POST     "/scan/ip"
+  ```
+
 ## Stack
 
 | Tecnologia                                                                                                              |   Tipo   | Função no Projeto                 |
@@ -93,3 +120,7 @@ Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais
 > **Disclaimer:** O IP Checker é um projeto pessoal em constante desenvolvimento. Podem ocorrer instabilidades ou falsos negativos dependendo das permissões de rede do sistema operativo utilizado. Sinta-se livre para modificar, alterar ou estudar o código.
 >
 > _Nota: A interface web visual foi inteiramente produzida com o auxílio da [IA Gemini](https://gemini.google.com)._
+
+```
+
+```
