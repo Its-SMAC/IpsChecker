@@ -5,6 +5,23 @@
 
 Uma ferramenta web leve e minimalista desenvolvida em Go para varrimento, monitorização e verificação de disponibilidade de endereços IP em redes locais.
 
+---
+
+## Index
+
+- [Funcionalidades](#funcionalidades)
+- [Futuras Funcionalidades](#futuras-funcionalidades)
+- [Fluxo de Utilização](#fluxo-de-utilização)
+- [Opção 1: Executar via Binário (.exe)](#opção-1-executar-via-binário-exe---recomendado-para-utilizadores)
+- [Opção 2: Executar Código Localmente](#opção-2-executar-código-localmente---recomendado-para-desenvolvedores)
+- [Resolução de Problemas](#resolução-de-problemas)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [API Endpoints](#api-endpoints)
+- [Stack](#stack)
+- [License](#license)
+
+---
+
 ## Funcionalidades
 
 - Varrimento automático a partir de um IP base/gama de rede.
@@ -37,6 +54,8 @@ Uma ferramenta web leve e minimalista desenvolvida em Go para varrimento, monito
    - **Por IP:** Digitar parte do endereço para encontrar um dispositivo específico.
      <img src="images/filtragem_ip.png" alt="Filtragem por IP" width="700">
 
+---
+
 ## Opção 1: Executar via Binário (.exe) - Recomendado para Utilizadores
 
 > [!WARNING]
@@ -62,6 +81,8 @@ Esta opção requer que tenhas o **Go 1.21+** instalado na tua máquina.
 git clone https://github.com/Its-SMAC/IpsChecker.git
 ```
 
+---
+
 ## Resolução de Problemas
 
 ### 1. Executável não funciona
@@ -73,6 +94,8 @@ git clone https://github.com/Its-SMAC/IpsChecker.git
 #### Como Resolver
 
 Transferir o [Source Code(.zip)](https://github.com/Its-SMAC/IpsChecker/archive/refs/tags/Latest.zip), descompactar, introduzir o [.exe](https://github.com/Its-SMAC/IpsChecker/releases/download/Latest/ip-checker) no Source Code descompactado, e executar o ip-checker
+
+---
 
 ## Estrutura do projeto
 
@@ -94,6 +117,8 @@ Transferir o [Source Code(.zip)](https://github.com/Its-SMAC/IpsChecker/archive/
 └── index.tmpl
 ```
 
+---
+
 ## API Endpoints
 
 O projeto utiliza a framework Gin para expor as seguintes rotas:
@@ -106,9 +131,11 @@ O projeto utiliza a framework Gin para expor as seguintes rotas:
 
 #### Exemplo de Log do Servidor (Gin)
 
-```text
+```bash
 [GIN] 2026/06/13 - 12:49:55 | 200 |    1.07s |       127.0.0.1 | POST     "/scan/ip"
 ```
+
+---
 
 ## Stack
 
@@ -118,9 +145,13 @@ O projeto utiliza a framework Gin para expor as seguintes rotas:
 | ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) | Frontend | Estilização sóbria da interface   |
 | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)       | Frontend | Pedidos assíncronos e filtragem   |
 
+---
+
 ## License
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE) para mais detalhes.
+
+---
 
 > [!WARNING]
 > **Disclaimer:** O IP Checker é um projeto pessoal em constante desenvolvimento. Podem ocorrer instabilidades ou falsos negativos dependendo das permissões de rede do sistema operativo utilizado. Sinta-se livre para modificar, alterar ou estudar o código.
