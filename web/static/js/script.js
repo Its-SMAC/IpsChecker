@@ -3,14 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const ipInput = document.getElementById("ipInput");
   const resultadosContainer = document.getElementById("resultadosContainer");
 
-  // Capturar os novos elementos de pesquisa
   const filtroContainer = document.getElementById("filtroContainer");
   const buscarInput = document.getElementById("buscarInput");
 
-  // Armazém de memória local para os resultados
   let listaDeHosts = [];
 
-  // Função dedicada exclusivamente a desenhar os cartões no HTML
   const renderizarCartoes = (hosts) => {
     resultadosContainer.innerHTML = "";
 
@@ -37,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Evento de Clique para Executar o Varrimento Principal
   btnScan.addEventListener("click", async () => {
     const ipValue = ipInput.value.trim();
 
@@ -46,11 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Reset de estados e feedback visual
     btnScan.disabled = true;
     btnScan.innerText = "A verificar...";
-    buscarInput.value = ""; // Limpa qualquer pesquisa anterior
-    filtroContainer.classList.add("hidden"); // Oculta o filtro enquanto carrega
+    buscarInput.value = "";
+    filtroContainer.classList.add("hidden");
     resultadosContainer.innerHTML =
       "<p class='text-sm text-gray-500 font-mono col-span-full text-center'>A executar varrimento na rede...</p>";
 
@@ -65,15 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!response.ok) throw new Error("Erro na comunicação com o servidor.");
 
-      // Salva a resposta direta do Go na nossa variável local
       listaDeHosts = await response.json();
 
-      // Mostra a caixa de pesquisa apenas se houver resultados salvos
       if (listaDeHosts && listaDeHosts.length > 0) {
         filtroContainer.classList.remove("hidden");
       }
 
-      // Desenha todos os resultados capturados inicialmente
       renderizarCartoes(listaDeHosts);
     } catch (error) {
       resultadosContainer.innerHTML = `<p class='text-sm text-red-600 font-mono col-span-full text-center'>${error.message}</p>`;
@@ -83,14 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // NOVO: Escuta o teclado e filtra em tempo real sem ir ao servidor
   buscarInput.addEventListener("input", () => {
     const termoPesquisa = buscarInput.value.toLowerCase().trim();
 
     const hostsFiltrados = listaDeHosts.filter((host) => {
       const ipBateCerto = host.address.toLowerCase().includes(termoPesquisa);
 
-      // Permite também pesquisar pelas palavras "ativo" ou "inacessível"
       const statusTexto = host.busy ? "ativo" : "inacessível";
       const statusBateCerto = statusTexto.includes(termoPesquisa);
 
