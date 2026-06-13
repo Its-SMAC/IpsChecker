@@ -108,20 +108,28 @@ Transferir o [Source Code(.zip)](https://github.com/Its-SMAC/IpsChecker/archive/
 
 ```text
 .
-├── cmd
-│ └── main.go
+├── external
+│   ├── api
+│   │   └── main.go
+│   └── cmd
+│       └── main.go
 ├── go.mod
 ├── go.sum
+├── images
+│   ├── filtragem_estado.png
+│   ├── filtragem_ip.png
+│   ├── interface_basica.png
+│   └── interface_pospesquisa.png
 ├── internal
-│ └── checker.go
+│   └── checker.go
 ├── LICENSE
 ├── README.md
 └── web
-├── static
-│ └── js
-│ └── script.js
-└── templates
-└── index.tmpl
+    ├── static
+    │   └── js
+    │       └── script.js
+    └── templates
+        └── index.tmpl
 ```
 
 ---
