@@ -37,6 +37,10 @@ Uma ferramenta web leve e minimalista desenvolvida em Go para varrimento, monito
 - [ ] **Modo CLI/CMD:** Permitir a execução do varrimento diretamente pelo terminal (ex: `./ip-checker --scan 192.168.1.1`), ideal para automações e uso via SSH sem necessidade de abrir o navegador.
 - [ ] **Latência por IP:** Exibir o tempo de resposta em milissegundos (ms) de cada dispositivo ativo, ajudando a identificar problemas de lentidão ou instabilidade na rede.
 - [ ] **Suporte a IPv6:** Expandir o algoritmo de varrimento e filtragem para suportar nativamente endereços IPv6, preparando a ferramenta para redes modernas.
+- [ ] **Exportação de resultados:** Permitir guardar o relatório de varrimento em formatos legíveis para auditorias e partilha de dados:
+  - [ ] `.txt` (Texto simples e rápido)
+  - [ ] `.csv` (Ideal para abrir no Excel ou processar em scripts)
+  - [ ] `.pdf` (Relatório visual formatado para impressão)
 
 ---
 
