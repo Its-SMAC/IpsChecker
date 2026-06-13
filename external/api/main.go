@@ -10,7 +10,9 @@ import (
 
 func main() {
 	gin.SetMode(gin.ReleaseMode)
+
 	r := gin.Default()
+
 	r.LoadHTMLGlob("web/templates/*")
 	r.Static("/static", "./web/static")
 
