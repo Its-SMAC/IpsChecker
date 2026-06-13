@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"ipchecker/internal"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -18,6 +19,21 @@ func main() {
 
 	r.GET("/", func(ctx *gin.Context) {
 		ctx.HTML(http.StatusOK, "index.tmpl", gin.H{"Titulo": "Ip Checker"})
+	})
+
+	r.POST("/scan/ip", func(ctx *gin.Context) {
+		var request struct {
+			Alvo string `json:"alvo"`
+		}
+
+		if err := ctx.ShouldBindJSON(&request); err != nil {
+			ctx.JSON(http.StatusBadRequest, gin.H{"erro": "Dados inválidos"})
+			return
+		}
+
+		lista := internal.Check(request.Alvo)
+
+		ctx.JSON(http.StatusOK, lista)
 	})
 
 	fmt.Println("Server has been start.")

@@ -3,12 +3,79 @@
     <head>
         <meta charset="UTF-8" />
         <title>{{.Titulo}}</title>
-        <script src="static/js/script.js"></script>
+        <script src="static/js/script.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
-    <body class="bg-gray-400 p-8">
-        <h1 class="text-5xl font-bold text-gray-800 mb-6 text-center">
-            {{.Titulo}}
-        </h1>
+    <body class="bg-stone-50 text-gray-900 min-h-screen font-sans antialiased">
+        <header class="border-b border-gray-200 bg-white py-6">
+            <div
+                class="bg-stone-300 max-w-5xl mx-auto flex justify-between items-center border-2 border-black-500 p-8"
+            >
+                <h1 class="text-2xl font-semibold tracking-tight text-gray-900">
+                    {{.Titulo}}
+                </h1>
+                <span
+                    class="bg-stone-600 text-xs font-mono text-white px-2 py-1 rounded"
+                >
+                    v1.0.0
+                </span>
+            </div>
+        </header>
+
+        <main class="max-w-5xl mx-auto mt-6 px-4">
+            <div class="flex flex-col md:flex-row gap-4 items-start">
+                <div
+                    class="w-full md:max-w-xl bg-stone-50 border border-gray-700 rounded-lg p-4 shadow-sm"
+                >
+                    <div class="flex flex-col gap-2">
+                        <label
+                            for="ipInput"
+                            class="text-xs font-medium text-gray-600 uppercase tracking-wide"
+                        >
+                            Gama de Redes / IP Base
+                        </label>
+                        <div class="flex gap-3">
+                            <input
+                                id="ipInput"
+                                type="text"
+                                placeholder="192.168.1.X"
+                                class="flex-1 bg-white border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-600 focus:ring-1 focus:ring-gray-600 transition-all font-mono"
+                            />
+                            <button
+                                id="btnScan"
+                                class="bg-gray-900 hover:bg-gray-800 active:bg-gray-950 text-white font-medium text-sm px-5 py-2 rounded-md transition-colors cursor-pointer shadow-sm whitespace-nowrap"
+                            >
+                                Executar Verificação
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    id="filtroContainer"
+                    class="hidden w-full md:max-w-xs bg-white border border-gray-200 rounded-lg p-4 shadow-sm"
+                >
+                    <div class="flex flex-col gap-2">
+                        <label
+                            for="buscarInput"
+                            class="text-xs font-medium text-gray-600 uppercase tracking-wide"
+                        >
+                            Filtrar Resultados
+                        </label>
+                        <input
+                            id="buscarInput"
+                            type="text"
+                            placeholder="Procurar IP ou estado..."
+                            class="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-600 focus:ring-1 focus:ring-gray-600 transition-all font-mono"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <section
+                id="resultadosContainer"
+                class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+            ></section>
+        </main>
     </body>
 </html>
