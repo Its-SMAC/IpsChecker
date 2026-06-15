@@ -2,7 +2,10 @@ package main
 
 import (
 	"fmt"
+	"html/template"
+	"io/fs"
 	"ipchecker/internal"
+	"ipchecker/web"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -13,8 +16,20 @@ func main() {
 
 	r := gin.Default()
 
-	r.LoadHTMLGlob("web/templates/*")
-	r.Static("/static", "./web/static")
+	webFS := web.GetEmbed()
+
+	tmpl, err := template.ParseFS(webFS, "templates/*")
+	if err != nil {
+		panic(err)
+	}
+	r.SetHTMLTemplate(tmpl)
+
+	staticFS, err := fs.Sub(webFS, "static")
+	if err != nil {
+		panic(err)
+	}
+
+	r.StaticFS("/static", http.FS(staticFS))
 
 	r.GET("/health", func(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, gin.H{"status": "Api is fine"})
