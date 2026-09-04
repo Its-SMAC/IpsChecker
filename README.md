@@ -5,6 +5,9 @@
 
 Uma ferramenta web leve e minimalista desenvolvida em Go para varrimento, monitorização e verificação de disponibilidade de endereços IP em redes locais.
 
+> ![INFO]
+> Este projeto entrou em pausa de desenvolvimento.
+
 ---
 
 ## Index
